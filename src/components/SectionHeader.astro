@@ -1,0 +1,29 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export enum Variant {
+	tiny = "tiny",
+	normal = "normal",
+	large = "large",
+}
+
+type Props = HTMLAttributes<"h3"> & {
+	variant?: Variant | string;
+};
+const { variant: maybeVariant, class: classes, ...props } = Astro.props;
+const variant = maybeVariant ?? Variant.normal;
+---
+
+<h3
+	class:list={[
+		"flex flex-row items-center",
+		{
+			"lg:text-6xl mb-16 large": variant === Variant.large,
+			"text-base m-0": variant === Variant.tiny,
+		},
+		classes,
+	]}
+	{...props}
+>
+	<slot />
+</h3>

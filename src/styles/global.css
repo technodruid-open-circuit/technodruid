@@ -1,0 +1,154 @@
+/*@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");*/
+@import "tailwindcss";
+
+@theme {
+  --default-font-family: "Fira Mono", monospace;
+  --default-mono-font-family: "Fira Mono", monospace;
+  --color-black: #020714;
+  --color-white: #d4ffb2;
+  --custom-marker: "* ";
+}
+
+@layer base {
+  body {
+    @apply leading-relaxed p-4 lg:p-16 pb-4 lg:pb-4 bg-black text-white relative container;
+    @apply min-h-screen overflow-x-hidden m-auto;
+    @apply flex flex-col justify-between;
+    @apply max-w-screen;
+    text-shadow: 0 0 4px rgba(180, 255, 180, 0.1);
+  }
+
+  body::before {
+    @apply absolute inset-0 pointer-events-none;
+    content: "";
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.025) 1px,
+      rgba(0, 0, 0, 0.05) 2px,
+      transparent 3px
+    );
+    background-size: 100% 3px; /* line spacing */
+    mix-blend-mode: soft-light;
+    opacity: 0.2;
+  }
+
+  .scanlines-container {
+    @apply relative;
+    width: 100%; /* Or specific width/height */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .scanlines-container img {
+    filter: sepia(100%) hue-rotate(50deg);
+  }
+
+  .scanlines-container::after {
+    @apply absolute w-full h-full top-0 left-0;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.025) 1px,
+      rgb(0, 0, 0) 10px,
+      transparent 10px
+    );
+    z-index: 1;
+    background-size: 100% 5px; /* line spacing */
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    /*opacity: 1;*/
+
+    content: "";
+  }
+
+  p {
+    @apply my-4;
+  }
+
+  main {
+    @apply flex flex-col justify-start items-start grow max-w-screen;
+  }
+
+  .container {
+    @apply w-fit px-6;
+  }
+
+  section,
+  article {
+    @apply my-2 lg:my-4;
+    max-width: calc(min(100vw, 75ch));
+  }
+
+  a {
+    @apply underline underline-offset-2;
+  }
+
+  li {
+    @apply my-4;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply align-middle mb-4;
+  }
+
+  h1 {
+    @apply text-6xl mt-12;
+  }
+
+  h2 {
+    @apply text-4xl mt-10;
+  }
+
+  h3 {
+    @apply text-2xl mt-8;
+  }
+
+  h4 {
+    @apply text-lg mt-4;
+  }
+
+  h5 {
+    @apply text-lg underline underline-offset-2 mt-4;
+  }
+
+  h6 {
+    @apply text-lg italic mt-4;
+  }
+
+  h3::before {
+    @apply text-sm align-top pt-1 inline-block mr-2;
+    content: "░▒▓";
+  }
+
+  h3.large::before {
+    @apply lg:text-4xl lg:align-middle;
+  }
+
+  body,
+  body * {
+    text-shadow: 0 0 2px rgba(123, 255, 156, 0.5),
+      0 0 6px rgb(158, 252, 165, 0.5), 1px 0 2px rgba(255, 0, 0, 0.4),
+      -1px 0 2px rgba(0, 0, 255, 0.4);
+  }
+
+  pre {
+    @apply my-4 p-2 lg:p-8 w-full border;
+  }
+
+  header pre {
+    border: 0;
+  }
+
+  a:hover,
+  a.active {
+    text-shadow: 0 0 2px rgba(123, 255, 156, 1), 0 0 6px rgb(158, 252, 165, 1),
+      1px 0 2px rgba(255, 0, 0, 0.5), -1px 0 2px rgba(0, 0, 255, 0.5);
+  }
+}
+
+blockquote {
+  @apply border-l-4 border-white pl-4 m-8 bg-black/50;
+}

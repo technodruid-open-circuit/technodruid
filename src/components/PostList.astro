@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { format } from "date-fns";
+
+type Props = {
+	title: string;
+	posts: Array<CollectionEntry<"blog">>;
+} & HTMLAttributes<"section">;
+
+let formatDate = (date: Date) => format(date, "yyyy MMM dd");
+
+let { posts, title, ...props } = Astro.props;
+posts.sort((a, b) => b.data.pubDate!.valueOf() - a.data.pubDate!.valueOf());
+---
+
+<section class:list={["w-full", props.class]} {...props}>
+	<p class="py-1 px-5 border m-0 font-bold text-lg">{title}</p>
+	<ul class="">
+		{
+			posts.map((post: any) => {
+				const id = post.id;
+				const data = post.data;
+				const pubDate: Date = data.pubDate;
+				const title = data.title;
+				const link = `/blog/${id}`;
+				return (
+					<li class="indent-none list-none border m-0 p-5 flex flex-col">
+						<>
+							<a href={link}>{title}</a>
+							<span class="opacity-50 text-sm">[{formatDate(pubDate)}]</span>
+						</>
+					</li>
+				);
+			})
+		}
+	</ul>
+</section>

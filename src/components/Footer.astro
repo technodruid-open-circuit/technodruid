@@ -1,0 +1,45 @@
+---
+import SectionHeader, { Variant as SectionHeaderVariant } from "./SectionHeader.astro";
+import { Icon } from "astro-icon/components";
+const today = new Date();
+---
+
+<footer class="flex flex-col lg:flex-row justify-between items-center w-full w-max-prose mt-16">
+	<div class="flex flex-col lg:flex-row gap-4 items-center">
+		<SectionHeader variant={SectionHeaderVariant.tiny}>Find Me Elsewhere</SectionHeader>
+		<ul class="flex flex-row gap-8 items-center text-lg">
+			<li class="flex flex-row items-center">
+				<a
+					href="https://youtube.com/@TheScatteredPath"
+					aria-label="Youtube Channel The Scattered Path"><Icon name="simple-icons:youtube" /></a
+				>
+			</li>
+			<li>
+				<a href="https://instagram.com/_graysonarts_" aria-label="Instagram account _graysonarts_"
+					><Icon name="simple-icons:instagram" /></a
+				>
+			</li>
+			<li>
+				<a
+					href="https://bsky.app/me.graysonarts.com"
+					aria-label="Bluesky account me.graysonarts.com"><Icon name="simple-icons:bluesky" /></a
+				>
+			</li>
+			<li>
+				<a href="https://linkedin.com/GraysonHay" aria-label="LinkedIn profile GraysonHay"
+					><Icon name="simple-icons:linkedin" /></a
+				>
+			</li>
+			<li>
+				<a href="https://github.com/graysonarts" aria-label="Github account graysonarts"
+					><Icon name="simple-icons:github" /></a
+				>
+			</li>
+		</ul>
+	</div>
+	<div class="flex lg:block flex-col space-x-2 items-center mt-8 lg:mt-0">
+		<span>&copy; 2025-2026</span><span><a href="https://grayson.llc">Grayson Hay</a></span><span
+			>All Rights Reserved</span
+		>
+	</div>
+</footer>

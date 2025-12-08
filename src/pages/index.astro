@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Base.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import { Variant as HeaderVariant } from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import SectionHeader from "../components/SectionHeader.astro";
+import { getCollection, render } from "astro:content";
+import { Icon } from "astro-icon/components";
+import FormattedDate from "../components/FormattedDate.astro";
+import { Image } from "astro:assets";
+import HeroImage from "../components/HeroImage.astro";
+import PostList from "../components/PostList.astro";
+
+const allPosts = (await getCollection("blog"))
+	.sort((a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 4);
+const latestPost = allPosts[0];
+const posts = allPosts.slice(1, 3);
+
+const { Content } = await render(latestPost);
+const post_count = (len: number) => {
+	switch (len) {
+		case 1:
+			return ["one", ""];
+		case 2:
+			return ["two", "s"];
+		default:
+			return ["three", "s"];
+	}
+};
+const [post_number, plural] = post_count(posts.length);
+---
+
+<Layout variant={HeaderVariant.small_bigger}>
+	<section class="p-4">
+		<SectionHeader variant="large">Latest Post</SectionHeader>
+		<div>
+			<div class="hero-image">
+				{latestPost.data.heroImage && <HeroImage heroImage={latestPost.data.heroImage} />}
+			</div>
+			<div class="prose">
+				<div class="title">
+					<div class="date">
+						{latestPost.data.pubDate && <FormattedDate date={latestPost.data.pubDate} />}
+						{
+							latestPost.data.updatedDate && (
+								<div class="last-updated-on">
+									Last updated on <FormattedDate date={latestPost.data.updatedDate} />
+								</div>
+							)
+						}
+					</div>
+					<h2>{latestPost.data.title}</h2>
+				</div>
+				<Content /><!-- Let's make this a summary/truncated with a read more-->
+			</div>
+			{
+				posts.length > 0 && (
+					<PostList class="mt-24" title={`Last ${post_number} post${plural}`} posts={posts} />
+				)
+			}
+		</div>
+	</section>
+</Layout>
