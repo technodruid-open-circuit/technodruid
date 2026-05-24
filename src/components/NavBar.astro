@@ -1,26 +1,25 @@
 ---
-import { getCollection } from "astro:content";
 import HeaderLink from "./HeaderLink.astro";
 
-const posts = await getCollection("blog");
-const sections = new Set(posts.map((post: any) => post.data.section));
-const headings = ["news", "technology", "druidism", "health"];
+interface NavEntry {
+	href: string;
+	label: string;
+}
+
+const entries: NavEntry[] = [
+	{ href: "/", label: "CREED" },
+	{ href: "/codex", label: "CODEX" },
+	{ href: "/practices", label: "PRACTICES" },
+	{ href: "/circuits", label: "CIRCUITS" },
+	{ href: "/library", label: "LIBRARY" },
+	{ href: "/about", label: "ABOUT" },
+];
 ---
 
 <div
 	class:list={[
-		"internal-links w-full grid grid-cols-2 lg:flex flex-wrap lg:justify-center text-lg lg:text-base gap-x-16 px-6",
+		"internal-links w-full lg:max-w-3xl lg:mx-auto grid grid-cols-2 lg:flex flex-wrap lg:justify-between text-lg lg:text-base gap-x-16 px-6 lg:px-0",
 	]}
 >
-	<HeaderLink href="/blog/">POSTS</HeaderLink>
-	{
-		headings.map((heading) => (
-			<Fragment>
-				{sections.has(heading) && (
-					<HeaderLink href={`/blog/sections/${heading}`}>{heading.toUpperCase()}</HeaderLink>
-				)}
-			</Fragment>
-		))
-	}
-	<HeaderLink href="/about">ABOUT</HeaderLink>
+	{entries.map((entry) => <HeaderLink href={entry.href}>{entry.label}</HeaderLink>)}
 </div>

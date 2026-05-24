@@ -1,0 +1,80 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Base.astro";
+import { SOURCE_REPO_URL } from "../consts";
+
+const canonical = await getCollection("canonical");
+const sorted = [...canonical].sort(
+	(a, b) => b.data.amendedAt.getTime() - a.data.amendedAt.getTime(),
+);
+
+// amendedAt is a calendar date in the frontmatter (YYYY-MM-DD), coerced by Zod to a UTC-midnight
+// Date. Format in UTC so the displayed day matches the authored value regardless of build TZ.
+const dateFmt = new Intl.DateTimeFormat("en", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+	timeZone: "UTC",
+});
+---
+
+<Layout
+	title="Archive — Technodruid"
+	description="Version history of the canonical documents. Each entry's current version and amendment date, with a link to the source repository's commit log — the git history is the version history."
+>
+	<section class="w-full max-w-3xl mx-auto px-4 py-12 md:py-16">
+		<h1 class="text-2xl md:text-3xl mb-6">Archive</h1>
+
+		<p class="text-base md:text-lg leading-relaxed mb-4">
+			The canonical documents are version-controlled. The repository's commit log <em>is</em> the
+			version history — every change is dated, attributed to a contributor, and traceable to the
+			pull request that produced it.
+		</p>
+		<p class="text-base md:text-lg leading-relaxed mb-8">
+			There is no separate ledger. The source repository is the artifact.
+		</p>
+
+		<table class="w-full border-collapse text-sm md:text-base">
+			<caption class="sr-only">
+				Canonical documents with their current version, most recent amendment date, and a link to
+				the commit log for each entry.
+			</caption>
+			<thead>
+				<tr class="border-b border-white/30 text-left">
+					<th scope="col" class="py-3 pr-4 font-normal uppercase tracking-wider text-xs">
+						Document
+					</th>
+					<th scope="col" class="py-3 pr-4 font-normal uppercase tracking-wider text-xs">
+						Version
+					</th>
+					<th scope="col" class="py-3 pr-4 font-normal uppercase tracking-wider text-xs">
+						Amended
+					</th>
+					<th scope="col" class="py-3 font-normal uppercase tracking-wider text-xs">Source</th>
+				</tr>
+			</thead>
+			<tbody>
+				{
+					sorted.map((entry) => {
+						const commitsUrl = `${SOURCE_REPO_URL}/commits/main/src/content/canonical/${entry.id}.md`;
+						const amendedIso = entry.data.amendedAt.toISOString();
+						return (
+							<tr class="border-b border-white/10">
+								<td class="py-3 pr-4">{entry.data.title}</td>
+								<td class="py-3 pr-4 font-mono">{entry.data.version}</td>
+								<td class="py-3 pr-4">
+									<time datetime={amendedIso}>{dateFmt.format(entry.data.amendedAt)}</time>
+								</td>
+								<td class="py-3">
+									<a href={commitsUrl} class="underline" rel="external">
+										Commit log
+									</a>
+								</td>
+							</tr>
+						);
+					})
+				}
+			</tbody>
+		</table>
+	</section>
+</Layout>

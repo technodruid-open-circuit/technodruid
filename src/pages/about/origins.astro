@@ -1,0 +1,14 @@
+---
+import { getEntry, render } from "astro:content";
+import CanonicalDoc from "../../layouts/CanonicalDoc.astro";
+
+const origins = await getEntry("canonical", "about-origins");
+if (!origins) {
+	throw new Error("Required canonical entry 'about-origins' not found in src/content/canonical/.");
+}
+const { Content, headings } = await render(origins);
+---
+
+<CanonicalDoc entry={origins} headings={headings}>
+	<Content />
+</CanonicalDoc>

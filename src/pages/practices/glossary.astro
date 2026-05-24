@@ -1,0 +1,14 @@
+---
+import { getEntry, render } from "astro:content";
+import CanonicalDoc from "../../layouts/CanonicalDoc.astro";
+
+const glossary = await getEntry("canonical", "glossary");
+if (!glossary) {
+	throw new Error("Required canonical entry 'glossary' not found in src/content/canonical/.");
+}
+const { Content, headings } = await render(glossary);
+---
+
+<CanonicalDoc entry={glossary} headings={headings}>
+	<Content />
+</CanonicalDoc>

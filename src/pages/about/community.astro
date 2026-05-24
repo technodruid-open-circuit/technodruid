@@ -1,0 +1,14 @@
+---
+import { getEntry, render } from "astro:content";
+import LivingDoc from "../../layouts/LivingDoc.astro";
+
+const community = await getEntry("living", "about-community");
+if (!community) {
+	throw new Error("Required living entry 'about-community' not found in src/content/living/.");
+}
+const { Content } = await render(community);
+---
+
+<LivingDoc entry={community}>
+	<Content />
+</LivingDoc>

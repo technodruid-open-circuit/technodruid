@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Base from "./Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import LivingBadge from "../components/LivingBadge.astro";
+import LastEditedStamp from "../components/LastEditedStamp.astro";
+import EditPageLink from "../components/EditPageLink.astro";
+
+interface Props {
+	entry: CollectionEntry<"living"> | CollectionEntry<"callings">;
+}
+
+const { entry } = Astro.props;
+const { title, description, lastEditedAt, contributors, sourcePath: dataSourcePath } = entry.data;
+const sourcePath = (dataSourcePath ?? entry.filePath ?? `src/content/${entry.collection}/${entry.id}`).replace(/^\.\//, "");
+const contributorList = contributors.length > 0 ? contributors.join(", ") : "—";
+---
+
+<Base title={title} description={description}>
+	<article class="living-body w-full">
+		<Breadcrumbs />
+		<div class="mt-4">
+			<LivingBadge />
+		</div>
+		<h1>{title}</h1>
+		<slot />
+		<footer class="mt-8 border-t border-white/30 pt-4 text-xs">
+			<LastEditedStamp date={lastEditedAt} />
+			<p>Contributors: {contributorList}</p>
+			<p class="mt-3">
+				<EditPageLink sourcePath={sourcePath} />
+			</p>
+		</footer>
+	</article>
+</Base>

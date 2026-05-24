@@ -1,0 +1,67 @@
+---
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+	headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+const items = headings.filter((h) => h.depth <= 3);
+---
+
+{
+	items.length > 0 && (
+		<nav aria-label="Table of contents" class="sticky top-4 text-sm">
+			<p class="mb-2 text-xs uppercase tracking-wider">Contents</p>
+			<ol>
+				{items.map((h) => (
+					<li class:list={[h.depth === 3 && "pl-4"]}>
+						<a href={`#${h.slug}`} data-toc-link={h.slug}>
+							{h.text}
+						</a>
+					</li>
+				))}
+			</ol>
+		</nav>
+	)
+}
+
+<style>
+	li {
+		margin: 0;
+	}
+	li + li {
+		margin-top: 0.25rem;
+	}
+</style>
+
+<script>
+	const links = document.querySelectorAll<HTMLAnchorElement>("[data-toc-link]");
+	if (links.length > 0 && "IntersectionObserver" in window) {
+		const linkBySlug = new Map<string, HTMLAnchorElement>();
+		links.forEach((link) => {
+			const slug = link.dataset.tocLink;
+			if (slug) linkBySlug.set(slug, link);
+		});
+
+		const targets: Element[] = [];
+		linkBySlug.forEach((_, slug) => {
+			const el = document.getElementById(slug);
+			if (el) targets.push(el);
+		});
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (!entry.isIntersecting) continue;
+					const link = linkBySlug.get(entry.target.id);
+					if (!link) continue;
+					links.forEach((l) => l.removeAttribute("aria-current"));
+					link.setAttribute("aria-current", "true");
+				}
+			},
+			{ rootMargin: "0px 0px -75% 0px", threshold: 0 },
+		);
+		targets.forEach((el) => observer.observe(el));
+	}
+</script>

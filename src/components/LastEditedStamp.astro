@@ -1,0 +1,11 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+
+interface Props {
+	date: Date;
+}
+
+const { date } = Astro.props;
+---
+
+<p>Last edited <FormattedDate date={date} /></p>

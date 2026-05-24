@@ -1,5 +1,6 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+export const SITE_TITLE = "Technodruid";
 
-export const SITE_TITLE = "Technodruid.org";
-export const SITE_DESCRIPTION = "A personal journey of merging technology and druidism";
+export const SITE_DESCRIPTION =
+	"The credible, durable source of truth for Technodruidism — for the curious, the aligned, the skeptical, the press, and the practicing.";
+
+export const SOURCE_REPO_URL = "https://github.com/technodruid-open-circuit/technodruid";

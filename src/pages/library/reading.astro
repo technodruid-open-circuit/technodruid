@@ -1,0 +1,16 @@
+---
+import { getEntry, render } from "astro:content";
+import LivingDoc from "../../layouts/LivingDoc.astro";
+
+const reading = await getEntry("living", "library-reading");
+if (!reading) {
+	throw new Error(
+		"Required living entry 'library-reading' not found in src/content/living/.",
+	);
+}
+const { Content } = await render(reading);
+---
+
+<LivingDoc entry={reading}>
+	<Content />
+</LivingDoc>

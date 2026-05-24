@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { SOURCE_REPO_URL } from "../consts";
+
+interface FunnelEntry {
+	intent: string;
+	label: string;
+	href: string;
+	note: string;
+	status: "available" | "pending";
+}
+
+const entries: readonly FunnelEntry[] = [
+	{
+		intent: "I want to fix the typo I just found",
+		label: "Open the source repository",
+		href: SOURCE_REPO_URL,
+		note: "Edit the file in place and open a pull request. Typo fixes are the lowest-friction contribution; no onboarding required.",
+		status: "available",
+	},
+	{
+		intent: "I want to write a repair guide",
+		label: "Documenter onboarding",
+		href: "#documenter-pending",
+		note: "The Documenter calling holds the Library. Onboarding lives at /callings/documenters when Phase 3 lands.",
+		status: "pending",
+	},
+	{
+		intent: "I want to share something I built or modified",
+		label: "Tinkerer space",
+		href: "#tinkerer-pending",
+		note: "The Tinkerer calling holds the build/modify register. Space coordination at /callings/tinkerers when Phase 3 lands.",
+		status: "pending",
+	},
+	{
+		intent: "I want to propose a doctrinal amendment",
+		label: "Architect process",
+		href: "#architect-pending",
+		note: "The Architect calling holds the canonical corpus. Amendment proposal template at /callings/architects when Phase 3 lands.",
+		status: "pending",
+	},
+	{
+		intent: "I want to translate",
+		label: "Translation coordination",
+		href: "#translation-pending",
+		note: "Translations of the canonical material are Living, attribution-tracked, and reviewed by Architects. Coordination page when Phase 3 lands.",
+		status: "pending",
+	},
+	{
+		intent: "I want to found a Circuit",
+		label: "Read the Circuit Founding Charter",
+		href: "/circuits/charter",
+		note: "Workbench, spare-parts library, documentation shelf, open invitation to apprentices. The Charter describes the minimum.",
+		status: "available",
+	},
+];
+---
+
+<Layout
+	title="Contribute — Technodruid"
+	description="How to participate at any level: fix a typo, write a repair guide, share a build, propose an amendment, translate, or found a Circuit."
+>
+	<section class="w-full max-w-3xl mx-auto px-4 py-12 md:py-16">
+		<Breadcrumbs />
+		<h1 class="text-2xl md:text-3xl mt-4 mb-6">Contribute</h1>
+
+		<p class="text-base md:text-lg leading-relaxed mb-8">
+			Pick the intent that fits. Each route has its own register and its own pace. Nothing here
+			requires permission; the Charter and the canonical corpus describe how change actually
+			lands.
+		</p>
+
+		<ul class="space-y-8">
+			{
+				entries.map((entry) => (
+					<li>
+						<div class="text-sm uppercase tracking-widest opacity-60 mb-1">{entry.intent}</div>
+						{entry.status === "available" ? (
+							<a href={entry.href} class="block">
+								<div class="text-lg uppercase tracking-wider">{entry.label}</div>
+								<div class="text-sm opacity-75 mt-1">{entry.note}</div>
+							</a>
+						) : (
+							<div class="opacity-60">
+								<div class="text-lg uppercase tracking-wider">
+									{entry.label}
+									<span class="ml-2 text-xs uppercase tracking-widest border border-white/40 px-2 py-0.5 rounded">
+										Coming soon
+									</span>
+								</div>
+								<div class="text-sm mt-1">{entry.note}</div>
+							</div>
+						)}
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</Layout>

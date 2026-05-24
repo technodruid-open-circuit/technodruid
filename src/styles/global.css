@@ -1,5 +1,28 @@
-/*@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");*/
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Fira Mono";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/fira-mono-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fira Mono";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/fira-mono-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fira Mono";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/fira-mono-700.woff2") format("woff2");
+}
 
 @theme {
   --default-font-family: "Fira Mono", monospace;
@@ -151,4 +174,76 @@
 
 blockquote {
   @apply border-l-4 border-white pl-4 m-8 bg-black/50;
+}
+
+.creed > p {
+  margin: 0;
+}
+
+/* Prose width cap — 65ch per readability research (Bringhurst 45–75, ideal 66; */
+/* Baymard 50–75; Tailwind max-w-prose; well under WCAG 1.4.8 AAA's 80-char ceiling). */
+/* Applied to reading containers; layout containers (CTAs, nav) opt out. */
+.prose,
+.creed,
+.canonical-body,
+.living-body {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+/* Canonical pages carry long-form doctrine with dense heading hierarchy. */
+/* Increase vertical rhythm to give sections, paragraphs, and rules room. */
+.canonical-body p {
+  margin-block: 1.5rem;
+}
+
+.canonical-body h2 {
+  margin-top: 4rem;
+}
+
+.canonical-body h3 {
+  margin-top: 2.75rem;
+}
+
+.canonical-body ul,
+.canonical-body ol {
+  margin-block: 1.75rem;
+}
+
+.canonical-body blockquote {
+  margin-block: 2.5rem;
+}
+
+.canonical-body hr {
+  margin-block: 4rem;
+  border-top: 1px solid rgb(212 255 178 / 0.2);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media print {
+  nav,
+  .print-hide {
+    display: none;
+  }
+
+  body.canonical,
+  body.canonical * {
+    background: white;
+    color: black;
+    text-shadow: none;
+  }
+
+  body.canonical::before {
+    display: none;
+  }
+
+  body.canonical {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
 }

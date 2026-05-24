@@ -22,3 +22,17 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# prd_work_loop working state (per-PRD)
+docs/prd/**/state.json
+
+# superpowers brainstorming visual companion (per-session mockups)
+.superpowers/
+
+# playwright test artifacts
+playwright-report/
+test-results/
+.plyawright-mcp/
+.claude
+.playwrite-mcp
+.playwright-mcp

@@ -1,0 +1,70 @@
+---
+interface Crumb {
+	href: string;
+	label: string;
+	current: boolean;
+}
+
+const labelMap: Record<string, string> = {
+	"/": "Creed",
+	"/codex": "Codex",
+	"/practices": "Practices",
+	"/practices/rite": "Rite of the Open Circuit",
+	"/practices/wheel": "Wheel",
+	"/practices/glossary": "Glossary",
+	"/circuits": "Circuits",
+	"/circuits/directory": "Directory",
+	"/circuits/charter": "Charter",
+	"/library": "Library",
+	"/library/repair": "Repair",
+	"/library/reading": "Reading",
+	"/library/links": "Links",
+	"/callings": "Callings",
+	"/callings/documenters": "Documenters",
+	"/callings/tinkerers": "Tinkerers",
+	"/callings/architects": "Architects",
+	"/contribute": "Contribute",
+	"/about": "About",
+	"/about/community": "Community",
+	"/about/origins": "Origins",
+	"/about/faq": "FAQ",
+	"/about/contact": "Contact",
+	"/archive": "Archive",
+};
+
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "/").replace(/\/+/g, "/");
+const segments = pathname.split("/").filter(Boolean);
+const isHome = segments.length === 0;
+
+const crumbs: Crumb[] = [{ href: "/", label: labelMap["/"], current: isHome }];
+
+let cumulative = "";
+segments.forEach((segment, index) => {
+	cumulative += `/${segment}`;
+	const fallback = segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, " ");
+	crumbs.push({
+		href: cumulative,
+		label: labelMap[cumulative] ?? fallback,
+		current: index === segments.length - 1,
+	});
+});
+---
+
+{
+	!isHome && (
+		<nav aria-label="Breadcrumb" class="text-sm">
+			<ol class="flex flex-wrap items-center gap-x-2">
+				{crumbs.map((crumb, index) => (
+					<li class="flex items-center gap-x-2">
+						{index > 0 && <span aria-hidden="true">/</span>}
+						{crumb.current ? (
+							<span aria-current="page">{crumb.label}</span>
+						) : (
+							<a href={crumb.href}>{crumb.label}</a>
+						)}
+					</li>
+				))}
+			</ol>
+		</nav>
+	)
+}

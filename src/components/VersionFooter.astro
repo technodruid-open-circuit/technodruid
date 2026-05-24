@@ -1,0 +1,30 @@
+---
+import { SOURCE_REPO_URL } from "../consts";
+import FormattedDate from "./FormattedDate.astro";
+
+interface Props {
+	version: string;
+	amendedAt: Date;
+	firstPublishedAt: Date;
+	sourcePath: string;
+}
+
+const { version, amendedAt, firstPublishedAt, sourcePath } = Astro.props;
+const normalized = sourcePath.replace(/^\/+/, "");
+const sourceUrl = `${SOURCE_REPO_URL}/blob/main/${normalized}`;
+const historyUrl = `${SOURCE_REPO_URL}/commits/main/${normalized}`;
+---
+
+<footer class="mt-8 border-t border-white/30 pt-4 text-xs">
+	<dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
+		<dt>Version</dt>
+		<dd data-version={version}>{version}</dd>
+		<dt>Amended</dt>
+		<dd><FormattedDate date={amendedAt} /></dd>
+		<dt>First published</dt>
+		<dd><FormattedDate date={firstPublishedAt} /></dd>
+	</dl>
+	<p class="mt-3">
+		<a href={sourceUrl}>Source</a> · <a href={historyUrl}>Revision history</a>
+	</p>
+</footer>

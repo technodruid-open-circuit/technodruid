@@ -1,0 +1,59 @@
+---
+import Layout from "../../layouts/Base.astro";
+
+interface LibraryEntry {
+	href: string;
+	label: string;
+	note: string;
+}
+
+const entries: readonly LibraryEntry[] = [
+	{
+		href: "/library/reading",
+		label: "Reading",
+		note: "Books, essays, and films that align with the practice. The reading list is itself a sermon — what we read shapes how we work.",
+	},
+	{
+		href: "/library/repair",
+		label: "Repair",
+		note: "A curated index of external repair resources — manuals, schematics, community repair spaces, channels, and the engineering record.",
+	},
+	{
+		href: "/library/links",
+		label: "Links",
+		note: "The broader commons we depend on — hackerspace networks, free-software foundations, right-to-repair coalitions, archival projects.",
+	},
+];
+---
+
+<Layout
+	title="Library"
+	description="The Library: the repair-religion's wiki. Three sub-sections — Reading, Repair, Links — collecting the books, resources, and broader commons the practice draws on."
+>
+	<section class="w-full max-w-3xl mx-auto px-4 py-12 md:py-16">
+		<h1 class="text-2xl md:text-3xl mb-6">Library</h1>
+
+		<p class="text-base md:text-lg leading-relaxed mb-4">
+			The Library is the repair-religion's wiki. It collects what the practice draws on from outside
+			itself: the books and films that shape how a practitioner thinks, the external repair
+			resources that fixes lean on, and the broader commons of organizations doing adjacent work.
+		</p>
+		<p class="text-base md:text-lg leading-relaxed mb-8">
+			Each sub-section is a [living](/codex) document — curated, not exhaustive, and amended in the
+			open. Nothing here is required reading; everything here earns its place.
+		</p>
+
+		<ul class="space-y-6">
+			{
+				entries.map((e) => (
+					<li>
+						<a href={e.href} class="block">
+							<div class="text-lg uppercase tracking-wider">{e.label}</div>
+							<div class="text-sm opacity-75 mt-1">{e.note}</div>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</Layout>

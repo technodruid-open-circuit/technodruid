@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Base.astro";
+
+interface CircuitsEntry {
+	href: string;
+	label: string;
+	status: "available" | "pending";
+	note: string;
+}
+
+const entries: readonly CircuitsEntry[] = [
+	{
+		href: "/circuits/charter",
+		label: "Charter",
+		status: "available",
+		note: "The canonical guidance a new founder reads: the minimum requirements from the Codex, suggested practices, naming conventions, how to register, and what holding to the doctrine means.",
+	},
+	{
+		href: "#directory-pending",
+		label: "Directory",
+		status: "pending",
+		note: "The self-attested list of Circuits that claim the practice. Name, location, contact, cadence, callings — at whatever specificity each Circuit chooses to share.",
+	},
+];
+---
+
+<Layout
+	title="Circuits"
+	description="Circuits: the local practitioner groups that gather around a workbench, a parts library, a documentation shelf, and an open invitation to apprentices. This section is where you find one or read how to found one."
+>
+	<section class="w-full max-w-3xl mx-auto px-4 py-12 md:py-16">
+		<h1 class="text-2xl md:text-3xl mb-6">Circuits</h1>
+
+		<p class="text-base md:text-lg leading-relaxed mb-4">
+			A Circuit is a local gathering of practitioners around the four things the Codex names: a
+			workbench, a spare-parts library, a documentation shelf, and an open invitation to apprentices.
+			Circuits are self-attested — the Open Circuit does not credential them, only lists those that
+			claim the practice.
+		</p>
+		<p class="text-base md:text-lg leading-relaxed mb-8">
+			This section is where you find a Circuit or read how to found one. The Charter is live today;
+			the Directory arrives when the first Circuits register.
+		</p>
+
+		<ul class="space-y-6">
+			{
+				entries.map((e) => (
+					<li>
+						{e.status === "available" ? (
+							<a href={e.href} class="block">
+								<div class="text-lg uppercase tracking-wider">{e.label}</div>
+								<div class="text-sm opacity-75 mt-1">{e.note}</div>
+							</a>
+						) : (
+							<div class="opacity-60">
+								<div class="text-lg uppercase tracking-wider">
+									{e.label}
+									<span class="ml-2 text-xs uppercase tracking-widest border border-white/40 px-2 py-0.5 rounded">
+										Coming soon
+									</span>
+								</div>
+								<div class="text-sm mt-1">{e.note}</div>
+							</div>
+						)}
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</Layout>

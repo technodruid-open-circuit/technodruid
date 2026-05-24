@@ -1,0 +1,14 @@
+---
+import { getEntry, render } from "astro:content";
+import CanonicalDoc from "../../layouts/CanonicalDoc.astro";
+
+const rite = await getEntry("canonical", "rite");
+if (!rite) {
+	throw new Error("Required canonical entry 'rite' not found in src/content/canonical/.");
+}
+const { Content, headings } = await render(rite);
+---
+
+<CanonicalDoc entry={rite} headings={headings}>
+	<Content />
+</CanonicalDoc>

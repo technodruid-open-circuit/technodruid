@@ -1,0 +1,13 @@
+---
+import { SOURCE_REPO_URL } from "../consts";
+
+interface Props {
+	sourcePath: string;
+}
+
+const { sourcePath } = Astro.props;
+const normalized = sourcePath.replace(/^\/+/, "");
+const editUrl = `${SOURCE_REPO_URL}/edit/main/${normalized}`;
+---
+
+<a class="print-hide" href={editUrl} rel="nofollow">Edit this page</a>

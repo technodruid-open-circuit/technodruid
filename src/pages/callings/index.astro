@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Base.astro";
+
+interface CallingEntry {
+	href: string;
+	label: string;
+	discipline: string;
+	note: string;
+}
+
+const entries: readonly CallingEntry[] = [
+	{
+		href: "/callings/documenters",
+		label: "Documenters",
+		discipline: "Capture",
+		note: "Keep the knowledge findable — repair guides, wikis, teardowns, the record that survives the writer.",
+	},
+	{
+		href: "/callings/tinkerers",
+		label: "Tinkerers",
+		discipline: "Contact",
+		note: "Keep the knowledge hands-on — take things apart, modify, reverse-engineer, learn what the written word can describe but cannot transmit.",
+	},
+	{
+		href: "/callings/architects",
+		label: "Architects",
+		discipline: "Distance",
+		note: "Keep the knowledge in proportion — hold the doctrine, mind the commons, think across the timescales the moment cannot see.",
+	},
+];
+---
+
+<Layout
+	title="Callings"
+	description="The Three Callings of the Open Circuit — Documenters (capture), Tinkerers (contact), Architects (distance). Three disciplines of the same practice; a practitioner may stand in one, drift between, or hold all three across a lifetime."
+>
+	<section class="w-full max-w-3xl mx-auto px-4 py-12 md:py-16">
+		<h1 class="text-2xl md:text-3xl mb-6">Callings</h1>
+
+		<p class="text-base md:text-lg leading-relaxed mb-4">
+			The Three Callings — Documenters, Tinkerers, Architects — are the three disciplines the
+			practice asks of its keepers. They are named in the <a href="/codex">Codex §VII</a>; these
+			pages are the [living](/codex) elaboration of what each calling means and how to enter it.
+		</p>
+		<p class="text-base md:text-lg leading-relaxed mb-8">
+			A calling is not a credential and not an identity to defend. Most practitioners stand in
+			one for a season and drift between over a lifetime. The three are co-equal; none is the
+			whole practice, and the practice needs all three.
+		</p>
+
+		<ul class="space-y-6">
+			{
+				entries.map((e) => (
+					<li>
+						<a href={e.href} class="block">
+							<div class="text-lg uppercase tracking-wider">
+								{e.label}
+								<span class="ml-2 text-xs uppercase tracking-widest opacity-60">
+									{e.discipline}
+								</span>
+							</div>
+							<div class="text-sm opacity-75 mt-1">{e.note}</div>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</Layout>

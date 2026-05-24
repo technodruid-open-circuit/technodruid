@@ -45,7 +45,7 @@ A Circuit **SHOULD** mark the four hinges in a way that fits its geography and i
 
 The Open Circuit does not credential names. A Circuit **MAY** take a place-name, a lineage name from the Circuit it grew out of, a name reflecting a calling its practitioners emphasize, or a chosen moniker meaning nothing to anyone but its members. The Charter is silent on which.
 
-The Charter is not silent on three things. A Circuit listed in [the directory](/circuits/directory) **MUST NOT**:
+The Charter is not silent on three things. A Circuit listed in the directory (COMING SOON) **MUST NOT**:
 
 - **Name itself "Open Circuit."** That name refers to the umbrella — the corpus, this site, the loose collective of practitioners and Circuits. A specific Circuit naming itself "Open Circuit" claims authority the umbrella does not delegate.
 - **Name itself to impersonate a maintained-corpus entity.** "Technodruid Foundation," "The Codex Council," "The Open Circuit Maintainers" — any name that an outsider could mistake for a body authoring or governing the canonical corpus.
@@ -55,7 +55,7 @@ Beyond these three: name yourselves as you will. The directory disambiguates sam
 
 ## Directory registration
 
-[The Circuits directory](/circuits/directory) is a self-attested list of Circuits that claim the practice. The Open Circuit does not credential Circuits, only lists those that claim it.
+The Circuits directory (COMING SOON) is a self-attested list of Circuits that claim the practice. The Open Circuit does not credential Circuits, only lists those that claim it.
 
 ### Listing
 

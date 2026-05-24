@@ -1,0 +1,16 @@
+---
+import { getEntry, render } from "astro:content";
+import LivingDoc from "../../layouts/LivingDoc.astro";
+
+const repair = await getEntry("living", "library-repair");
+if (!repair) {
+	throw new Error(
+		"Required living entry 'library-repair' not found in src/content/living/.",
+	);
+}
+const { Content } = await render(repair);
+---
+
+<LivingDoc entry={repair}>
+	<Content />
+</LivingDoc>

@@ -1,0 +1,129 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Base.astro";
+
+const circuits = await getCollection("circuits");
+const sortedCircuits = [...circuits].sort((a, b) =>
+	a.data.name.localeCompare(b.data.name),
+);
+---
+
+<Layout
+	title="Circuits Directory — Technodruid"
+	description="The self-attested directory of Circuits that claim the practice. A Circuit lists itself; the Open Circuit does not credential. Browse the list, or open the map view (requires JavaScript)."
+>
+	<section class="w-full max-w-3xl mx-auto px-4 py-12 md:py-16">
+		<h1 class="text-2xl md:text-3xl mb-6">Circuits Directory</h1>
+
+		<p class="text-base md:text-lg leading-relaxed mb-4">
+			The directory is self-attested. A Circuit lists itself by touching the entry file in the
+			source repository; the Open Circuit does not credential Circuits, only lists those that
+			claim the practice. See <a href="/circuits/charter" class="underline">the Charter</a> for
+			what holding to the doctrine means and how to register.
+		</p>
+		<p class="text-base md:text-lg leading-relaxed mb-8">
+			Until real Circuits register, the directory holds placeholder entries marked
+			<span class="uppercase tracking-widest text-xs border border-white/40 px-1.5 py-0.5 rounded">
+				Example
+			</span>
+			— shaped like real entries so the form is legible.
+		</p>
+
+		<section aria-labelledby="map-heading" class="mb-12">
+			<h2 id="map-heading" class="text-xl md:text-2xl mb-3">Map view</h2>
+			<noscript>
+				<p class="text-sm opacity-75 mb-3">
+					The map view requires JavaScript. The full directory is rendered below as a list.
+				</p>
+			</noscript>
+			<p class="text-sm">
+				<a href="#circuits-list" class="underline">Skip the map and go to the list</a>
+				— the map is a progressive enhancement; the list is the source of truth.
+			</p>
+			<div
+				id="circuits-map"
+				role="region"
+				aria-label="Circuit locations map (interactive when JavaScript is enabled)"
+				class="mt-4 border border-white/30 rounded p-4 text-sm opacity-75"
+			>
+				A map view will mount here when a map library is enabled. Until then, every Circuit's
+				location appears in the list below.
+			</div>
+		</section>
+
+		<section aria-labelledby="circuits-list-heading">
+			<h2 id="circuits-list-heading" class="sr-only">List of Circuits</h2>
+			{
+				sortedCircuits.length === 0 ? (
+					<p class="text-base opacity-75" id="circuits-list">
+						No Circuits have registered yet. See{" "}
+						<a href="/circuits/charter" class="underline">
+							the Charter
+						</a>{" "}
+						to learn how to list one.
+					</p>
+				) : (
+					<ul id="circuits-list" class="space-y-8">
+						{sortedCircuits.map((circuit) => (
+							<li
+								class:list={[
+									"border-l-2 pl-4",
+									circuit.data.kind === "example"
+										? "border-white/30 opacity-80"
+										: "border-white/60",
+								]}
+							>
+								<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
+									<h3 class="text-lg uppercase tracking-wider">{circuit.data.name}</h3>
+									{circuit.data.kind === "example" && (
+										<span class="uppercase tracking-widest text-xs border border-white/40 px-1.5 py-0.5 rounded">
+											Example
+										</span>
+									)}
+								</div>
+								<dl class="text-sm space-y-1">
+									<div class="flex flex-wrap gap-x-2">
+										<dt class="uppercase tracking-widest text-xs opacity-60 w-24 shrink-0">
+											Location
+										</dt>
+										<dd>{circuit.data.location}</dd>
+									</div>
+									<div class="flex flex-wrap gap-x-2">
+										<dt class="uppercase tracking-widest text-xs opacity-60 w-24 shrink-0">
+											Contact
+										</dt>
+										<dd>{circuit.data.contact}</dd>
+									</div>
+									<div class="flex flex-wrap gap-x-2">
+										<dt class="uppercase tracking-widest text-xs opacity-60 w-24 shrink-0">
+											Cadence
+										</dt>
+										<dd>{circuit.data.cadence}</dd>
+									</div>
+									<div class="flex flex-wrap gap-x-2">
+										<dt class="uppercase tracking-widest text-xs opacity-60 w-24 shrink-0">
+											Callings
+										</dt>
+										<dd>{circuit.data.callings.join(", ")}</dd>
+									</div>
+									{circuit.data.localSite && (
+										<div class="flex flex-wrap gap-x-2">
+											<dt class="uppercase tracking-widest text-xs opacity-60 w-24 shrink-0">
+												Local site
+											</dt>
+											<dd>
+												<a href={circuit.data.localSite} class="underline">
+													{circuit.data.localSite}
+												</a>
+											</dd>
+										</div>
+									)}
+								</dl>
+							</li>
+						))}
+					</ul>
+				)
+			}
+		</section>
+	</section>
+</Layout>

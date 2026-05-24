@@ -1,17 +1,19 @@
 ---
 import "../styles/global.css";
-import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
-import Header, { Variant as HeaderVariant } from "../components/Header.astro";
+import Header from "../components/Header.astro";
+import Plausible from "../components/Plausible.astro";
 
-type Props = Partial<CollectionEntry<"blog">["data"]> & {
-	variant?: HeaderVariant;
-	enable_comments?: boolean;
+type Props = {
+	title?: string;
+	description?: string;
 	image?: ImageMetadata;
+	bodyClass?: string;
 };
 
-const { title, description, variant, enable_comments, image } = Astro.props;
+const { title, description, image, bodyClass } = Astro.props;
+const bodyClasses = ["flex", "items-center", bodyClass].filter(Boolean).join(" ");
 ---
 
 <html lang="en">
@@ -21,28 +23,16 @@ const { title, description, variant, enable_comments, image } = Astro.props;
 			description={description ?? "A blog about technology and druidry"}
 			image={image}
 		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- Privacy-friendly analytics by Plausible -->
-		<script is:inline async src="https://plausible.io/js/pa-EFVJYr-ShbhP7RxwI9QS_.js"></script>
-		<script is:inline async src="../../plausible.js"></script>
-		{enable_comments && <script defer src="https://comments.technodruid.org/comentario.js" />}
+		<Plausible />
 	</head>
-	<body class="flex items-center">
-		<Header variant={variant} />
+	<body class={bodyClasses}>
+		<Header />
 		<main class="flex
 		items-center
 		p-4
 		md:p-8">
 			<div class="w-full flex flex-col items-center">
 				<slot />
-				<div class="w-full hidden md:block">
-					{enable_comments && <comentario-comments />}
-				</div>
 			</div>
 
 			<Footer />

@@ -1,0 +1,23 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import LivingDoc from "../../layouts/LivingDoc.astro";
+
+export async function getStaticPaths() {
+	const callings = await getCollection("callings");
+	return callings.map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
+}
+
+interface Props {
+	entry: CollectionEntry<"callings">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<LivingDoc entry={entry}>
+	<Content />
+</LivingDoc>

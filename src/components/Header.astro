@@ -2,76 +2,53 @@
 import type { HTMLAttributes } from "astro/types";
 import NavBar from "./NavBar.astro";
 
-export enum Variant {
-	main = "main",
-	small = "small",
-	small_bigger = "smb",
-	tiny = "tiny",
-}
+type Props = HTMLAttributes<"header">;
 
-interface Props extends HTMLAttributes<"header"> {
-	variant?: Variant;
-}
-
-const { variant: maybeVariant, ...props } = Astro.props;
-const variant = maybeVariant ?? Variant.small;
-
-const text_variant = (variant: Variant) => {
-	if (variant === Variant.main) {
-		return `
-░██████████                      ░██                                     ░██                     ░██       ░██
-    ░██                          ░██                                     ░██                               ░██
-    ░██     ░███████   ░███████  ░████████  ░████████   ░███████   ░████████ ░██░████ ░██    ░██ ░██ ░████████
-    ░██    ░██    ░██ ░██    ░██ ░██    ░██ ░██    ░██ ░██    ░██ ░██    ░██ ░███     ░██    ░██ ░██░██    ░██
-    ░██    ░█████████ ░██        ░██    ░██ ░██    ░██ ░██    ░██ ░██    ░██ ░██      ░██    ░██ ░██░██    ░██
-    ░██    ░██        ░██    ░██ ░██    ░██ ░██    ░██ ░██    ░██ ░██   ░███ ░██      ░██   ░███ ░██░██   ░███
-    ░██     ░███████   ░███████  ░██    ░██ ░██    ░██  ░███████   ░█████░██ ░██       ░█████░██ ░██ ░█████░██
-`;
-	}
-
-	if (variant === Variant.small || variant === Variant.small_bigger) {
-		return `
-██████ ▄▄▄▄▄  ▄▄▄▄ ▄▄ ▄▄ ▄▄  ▄▄  ▄▄▄  ▄▄▄▄  ▄▄▄▄  ▄▄ ▄▄ ▄▄ ▄▄▄▄
-  ██   ██▄▄  ██▀▀▀ ██▄██ ███▄██ ██▀██ ██▀██ ██▄█▄ ██ ██ ██ ██▀██
-  ██   ██▄▄▄ ▀████ ██ ██ ██ ▀██ ▀███▀ ████▀ ██ ██ ▀███▀ ██ ████▀
-`;
-	}
-
-	if (variant === Variant.tiny) {
-		return `
-▄▖    ▌      ▌    ▘ ▌
-▐ █▌▛▘▛▌▛▌▛▌▛▌▛▘▌▌▌▛▌
-▐ ▙▖▙▖▌▌▌▌▙▌▙▌▌ ▙▌▌▙▌
-`;
-	}
-};
+const { ...props } = Astro.props;
 ---
 
 <header class:list={["m-auto pb-4", props.class]} {...props}>
-	<nav class="">
-		<h2 class:list={["mt-0 mb-4 flex flex-col justify-center md:justify-start"]}>
-			<a href="/" class:list={["flex justify-center md:justify-start no-underline"]}
-				><pre
-					class:list={[
-						"w-fit hidden md:inline-block",
-						{
-							"text-xs lg:text-sm": variant === "main",
-							"text-xs lg:text-xl": variant === "small",
-							"text-xs lg:text-2xl": variant === "smb",
-						},
-					]}>{text_variant(variant)}</pre>
-				<pre
-					class:list={[
-						"w-fit inline-block md:hidden",
-						{
-							"text-xs lg:text-sm": variant === "main",
-							"text-xs lg:text-lg": variant === "small",
-							"text-xs lg:text-2xl": variant === "smb",
-						},
-					]}>{text_variant(Variant.tiny)}</pre></a
+	<nav>
+		<h2 class="mt-0 mb-8 md:mb-10 flex justify-center md:justify-start">
+			<a
+				href="/"
+				aria-label="Technodruid home"
+				class="logo-link no-underline"
 			>
+				<span class="logo tracking-wide font-medium text-2xl md:text-4xl lg:text-5xl">
+					<span class="logo-chevron" aria-hidden="true">❯</span>
+					<span class="logo-name">technodruid</span>
+					<span class="logo-cursor" aria-hidden="true"></span>
+				</span>
+			</a>
 		</h2>
 	</nav>
 	<NavBar />
 	<div class="social-links"></div>
 </header>
+
+<style>
+	.logo-chevron {
+		opacity: 0.55;
+		margin-inline-end: 0.2em;
+	}
+
+	.logo-cursor::after {
+		content: "▌";
+		display: inline-block;
+		margin-inline-start: 0.1em;
+		animation: logo-blink 1.1s steps(2, start) infinite;
+	}
+
+	@keyframes logo-blink {
+		to {
+			opacity: 0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.logo-cursor::after {
+			animation: none;
+		}
+	}
+</style>

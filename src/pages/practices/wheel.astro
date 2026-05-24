@@ -1,0 +1,71 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+const events = await getCollection("wheelEvents");
+const eventsByDate = [...events].sort(
+	(a, b) => a.data.date.getTime() - b.data.date.getTime(),
+);
+
+const MONTHS = [
+	"January", "February", "March", "April", "May", "June",
+	"July", "August", "September", "October", "November", "December",
+] as const;
+
+const eventsByMonth = MONTHS.map((name, index) => ({
+	name,
+	slug: name.toLowerCase(),
+	events: eventsByDate.filter((e) => e.data.date.getUTCMonth() === index),
+})).filter((m) => m.events.length > 0);
+---
+
+<Base
+	title="Wheel of the Year — Technodruid"
+	description="The Technodruidic year and its observances. Subscribe via ICS or RSS to follow the Wheel."
+>
+	<article class="w-full">
+		<Breadcrumbs />
+		<h1>Wheel of the Year</h1>
+		<p>
+			The Wheel turns through four hinges — two solstices and two equinoxes — each binding the
+			practitioner to a sacred practice from the Codex. The form is annual; the answer is the
+			practitioner's.
+		</p>
+
+		<nav aria-label="Wheel subscriptions" class="my-8 flex flex-wrap gap-4">
+			<a
+				href="/practices/wheel.ics"
+				rel="alternate"
+				type="text/calendar"
+				class="inline-block border border-white px-4 py-2 uppercase tracking-wider hover:bg-white hover:text-black"
+			>
+				Subscribe (ICS)
+			</a>
+			<a
+				href="/wheel.rss.xml"
+				rel="alternate"
+				type="application/rss+xml"
+				class="inline-block border border-white px-4 py-2 uppercase tracking-wider hover:bg-white hover:text-black"
+			>
+				RSS
+			</a>
+		</nav>
+
+		{
+			eventsByMonth.map((month) => (
+				<section class="my-6" aria-labelledby={`month-${month.slug}-heading`}>
+					<h2 id={`month-${month.slug}-heading`}>{month.name}</h2>
+					<ul>
+						{month.events.map((event) => (
+							<li>
+								<FormattedDate date={event.data.date} /> — <strong>{event.data.title}</strong>: {event.data.description}
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+	</article>
+</Base>

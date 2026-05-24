@@ -1,0 +1,42 @@
+---
+import { getEntry, render } from "astro:content";
+import CanonicalDoc from "../layouts/CanonicalDoc.astro";
+
+const codex = await getEntry("canonical", "codex");
+if (!codex) {
+	throw new Error("Required canonical entry 'codex' not found in src/content/canonical/.");
+}
+const { Content, headings } = await render(codex);
+---
+
+<CanonicalDoc entry={codex} headings={headings}>
+	<Content />
+
+	<aside
+		aria-labelledby="downloads-heading"
+		class="print-hide mt-12 border-t border-white/30 pt-6"
+	>
+		<h2 id="downloads-heading" class="text-base uppercase tracking-wider">
+			Downloads
+		</h2>
+		<ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+			<li>
+				<a href="#download-coming-soon" aria-disabled="true">
+					ePub (coming soon)
+				</a>
+			</li>
+			<li>
+				<a href="#download-coming-soon" aria-disabled="true">
+					PDF (coming soon)
+				</a>
+			</li>
+		</ul>
+		<section id="download-coming-soon" class="mt-4 text-sm opacity-70">
+			<p>
+				Downloadable ePub and PDF builds of the Codex will be published once
+				the canonical text lands. Until then, the Markdown source in the
+				repository is the authoritative form.
+			</p>
+		</section>
+	</aside>
+</CanonicalDoc>

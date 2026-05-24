@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
+import Base from "./Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CanonicalBadge from "../components/CanonicalBadge.astro";
+import TableOfContents from "../components/TableOfContents.astro";
+import VersionFooter from "../components/VersionFooter.astro";
+
+interface Props {
+	entry: CollectionEntry<"canonical">;
+	headings: MarkdownHeading[];
+}
+
+const { entry, headings } = Astro.props;
+const { title, description, version, amendedAt, firstPublishedAt } = entry.data;
+const sourcePath = (entry.filePath ?? `src/content/canonical/${entry.id}`).replace(/^\.\//, "");
+---
+
+<Base title={title} description={description} bodyClass="canonical">
+	<article class="w-full max-w-6xl mx-auto">
+		<Breadcrumbs />
+		<div class="mt-4">
+			<CanonicalBadge />
+		</div>
+		<h1>{title}</h1>
+		<div class="md:grid md:grid-cols-[minmax(0,16rem)_minmax(0,65ch)] md:gap-8">
+			<aside class="md:order-1">
+				<TableOfContents headings={headings} />
+			</aside>
+			<div class="canonical-body md:order-2">
+				<slot />
+				<VersionFooter
+					version={version}
+					amendedAt={amendedAt}
+					firstPublishedAt={firstPublishedAt}
+					sourcePath={sourcePath}
+				/>
+			</div>
+		</div>
+	</article>
+</Base>
