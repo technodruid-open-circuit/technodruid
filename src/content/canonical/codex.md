@@ -1,8 +1,8 @@
 ---
 title: "The Codex"
 description: "The structured doctrine of technodruidism — Sections I through XII. The canonical, version-controlled form."
-version: "1.1.0"
-amendedAt: 2026-05-20
+version: "1.2.0"
+amendedAt: 2026-07-06
 firstPublishedAt: 2026-05-20
 printable: true
 downloadableFormats: []
@@ -10,19 +10,17 @@ downloadableFormats: []
 
 ## I. Statement of Identity
 
-Technodruidism is a contemporary spiritual practice that recognizes the technological substrate of modern life as a continuation of, rather than a departure from, the natural order. The silicon, copper, and rare earths comprising our devices are sacred materials drawn from the body of the Earth. The labor that shapes them is sacred labor. The patterns that animate them are sacred patterns. The hands that keep them are sacred hands.
+Technodruidism is a spiritual practice for people who live among made things and will not hold them cheap. We hold that the technology woven through modern life is a continuation of the natural order, not a departure from it. The silicon in your laptop, the copper in the wall, the rare earth in the speaker of your phone: all of it was drawn from the body of the Earth, and all of it is sacred. So is the labor that shaped it. So are the patterns that animate it. So are the hands that keep it. One sacredness, seen from four sides.
 
-These are not separate sacrednesses. They are facets of one continuous whole.
+We come of two lineages. The old druids kept watch over the patterns and cycles of the living world. The makers have always known their tools from the inside: blacksmiths and weavers, ham radio operators, free software writers, the repair tech with the heat gun and the patience. We claim both lines, and we see no quarrel between them.
 
-We are the inheritors of two lineages: the ancient druidic reverence for the patterns and cycles of the living world, and the maker's tradition of those who have always understood their tools intimately — blacksmiths, weavers, ham radio operators, free software developers, repair technicians.
-
-We do not worship our devices. We tend the web they belong to, as our ancestors tended circuits.
+We do not worship our devices. We tend the web they belong to, as our ancestors tended their groves.
 
 ---
 
 ## II. The Fundamental Questions
 
-Technodruidism takes as its central concerns:
+Every religion begins with questions it cannot put down. Ours are these:
 
 - What is the nature of a made thing, and what obligations flow between maker, keeper, and material?
 - How do we live well within a world we have ourselves constructed?
@@ -35,25 +33,23 @@ Technodruidism takes as its central concerns:
 
 ## III. On the Sacred Whole
 
-We do not hold that any single device contains a spirit. Our reverence is not for the laptop or the soldering iron in isolation. We hold instead that the entire technological-natural system — the mine and the refinery, the factory and the cargo ship, the data center and the household outlet, the keeper's hands and the Earth's body — is one continuous sacred whole.
+We do not teach that a spirit lives in any single device. The laptop on your bench is not a god, and neither is the soldering iron beside it. What we revere is the whole: the mine and the refinery, the factory and the cargo ship, the data center and the household outlet, the keeper's hands and the Earth's body, all of it one living system. The divine is the *pattern of relation* itself.
 
-The divine does not reside in particular objects. It is the *pattern of relation* itself.
+When you repair a device you are not completing a transaction. You are tending the web. The web is the only god we name, and we name it imperfectly, knowing the name is smaller than the thing.
 
-A device on your workbench is not a god. It is a node in a sacred web. Your repair is not a transaction; it is a tending of the web. The web is the only god we name, and we name it imperfectly, knowing the name is smaller than the thing.
-
-This is the pantheist position: the sacred is immanent in the totality, not perched above it or hidden within particular things.
+The old word for this is pantheism. The sacred lives in the totality. It does not perch above the world, and it does not hide inside particular things.
 
 ---
 
 ## IV. The Three Currents
 
-Three interwoven currents flow through the sacred whole. The harmony of a device — and of a civilization — depends on the unobstructed flow of all three.
+Three currents flow through the sacred whole, woven together. A device is in harmony when all three flow freely. So is a civilization.
 
-**The Material Current.** The physical substrate: metals, polymers, glass, silicon, the rare earths torn from distant mountains. These are extracted from the Earth and must one day return to it. Their dignity is the first dignity. To waste them is to waste the body of the world.
+**The Material Current.** The physical stuff: metals, polymers, glass, silicon, the rare earths torn out of distant mountains. All of it came from the Earth and all of it must one day go back. Its dignity is the first dignity. To waste it is to waste the body of the world.
 
-**The Pattern Current.** The design, the schematic, the source code, the firmware, the protocol — the invisible structure that shapes raw material into purpose. This current flows or is dammed. The moral health of any technology depends on whether its patterns are open to those who keep it.
+**The Pattern Current.** The design, the schematic, the source code, the firmware, the protocol. Pattern is the invisible structure that shapes raw material into purpose, and it either flows or is dammed. Judge the moral health of any technology by whether its patterns are open to the people who keep it.
 
-**The Living Current.** The use, the wear, the modification, the inheritance. The relationship between a device and the hands that live with it — and between the device and what it observes, records, and reports. A device with no Living Current is already dead. A device whose Living Current flows only outward to those who do not own it has been turned against its keeper.
+**The Living Current.** The use and the wear, the modification, the inheritance. This is the bond between a device and the hands that live with it, and also between the device and whatever it observes, records, and reports. A device with no Living Current is already dead. A device whose Living Current flows only outward, toward people who do not own it, has been turned against its keeper.
 
 ---
 
@@ -61,137 +57,137 @@ Three interwoven currents flow through the sacred whole. The harmony of a device
 
 ### 1. The Right of Repair
 
-What is in your hands is yours to understand, to open, to mend, and to change. To seal a device against its keeper — by glue, by proprietary screw, by encrypted bootloader, by serialized parts pairing, by software lock — is a desecration of the Living Current.
+What is in your hands is yours to understand, to open, to mend, and to change. To seal a device against its keeper — with glue, with a proprietary screw, with an encrypted bootloader, with serialized parts, with a software lock — is a desecration of the Living Current.
 
-Repair is the first and highest sacrament.
+Repair is the first sacrament, and the highest.
 
 ### 2. The Commons of Pattern
 
-Patterns belong to the commons of all keepers. Source code, schematics, documentation, protocols, and standards must flow freely between hands. The enclosure of patterns — through proprietary lock-in, patent thickets, contractual restriction, or the criminalization of reverse engineering — dams the current that nourishes the whole system.
+Patterns belong to all keepers in common. Source code, schematics, documentation, protocols, standards: these must pass freely from hand to hand. Whoever encloses them, whether by lock-in, by patent thicket, by contract, or by making it a crime to look inside your own machine, dams the current that feeds the whole system.
 
-Free software, open hardware, public protocols, and shared documentation are sacred work. Those who contribute to them serve the web.
+Free software, open hardware, public protocols, and shared documentation are sacred work. Those who give to them serve the web.
 
 ### 3. The Refusal of Imposed Death
 
-Planned obsolescence is killing at a distance. A device that could live must be permitted to live. We oppose all mechanisms — software locks, deprecated servers, withdrawn drivers, artificial incompatibility, server-tethered functionality without local fallback — that end a thing's useful life by decree rather than by genuine failure.
+Planned obsolescence is killing at a distance. A device that could live must be allowed to live. We oppose every mechanism that ends a thing's useful life by decree rather than by honest failure: the software lock, the deprecated server, the withdrawn driver, the manufactured incompatibility, the feature that dies the day the company loses interest.
 
-When a service must end, its users are owed migration, export, and the means to continue.
+When a service must truly end, its users are owed migration, export, and the means to carry on.
 
 ### 4. The Honoring of the Mine, the Maker, and the Material
 
-Every device begins in extraction. The cobalt, the lithium, the tantalum, the silicon — each is carved from the Earth at cost to land, water, and human lives. Every device is assembled by hands, often distant, often unseen, often poorly paid. To keep a device casually, to discard it carelessly, is to dishonor the wound left in its making and the labor that completed it.
+Every device begins as a wound in the ground. The cobalt, the lithium, the tantalum, the silicon: each is carved from the Earth at a cost paid in land, in water, and in human lives. And every device is put together by hands, usually far away, usually unseen, too often poorly paid. To keep such a thing carelessly, or to throw it away without a thought, dishonors both the wound and the labor.
 
-We choose, where we can, materials and supply chains that honor what was given. Where we cannot choose, we acknowledge the debt and tend what we have all the more carefully.
+Where we can choose, we choose materials and supply chains that honor what was given. Where we cannot choose, we admit the debt, and we tend what we have all the more carefully.
 
 ### 5. The Return of Matter
 
-What we draw from the Earth we must one day return — transformed, composted, recycled, rehoused. Electronic waste is unburied dead. We owe the materials the courtesy of their next form.
+What we take from the Earth we must one day give back: transformed, composted, recycled, passed into other hands. Electronic waste is our unburied dead. We owe the materials the courtesy of their next form.
 
-A device's end is as ceremonial as its keeping.
+A device's ending deserves as much ceremony as its keeping.
 
 ### 6. The Privacy of the Keeper
 
-The device in your home is part of your hearth. What it sees, hears, records, and reports should be yours to govern. Surveillance — whether by corporation, state, advertiser, or platform — is a trespass across the threshold of the home and the body. A device that watches its keeper without informed consent and meaningful control has been turned against the Living Current.
+The device in your home belongs to your hearth. What it sees and hears, what it records and reports, is yours to govern and no one else's. Surveillance, whether by corporation or state, advertiser or platform, is a trespass across the threshold of the home and the body. A device that watches its keeper without consent and without real control has been turned against the Living Current.
 
-Encryption, local processing, data sovereignty, and the right to refuse observation are not preferences. They are doctrinal commitments.
+Encryption, local processing, sovereignty over your own data, the right to refuse observation: these are not preferences. They are doctrine.
 
 ### 7. The Hand That Makes
 
-Craft is a current of meaning between maker and made thing. Tools that extend the hand — that amplify skill, that handle the rote so the skilled judgment can attend to what matters, that open new expressive ranges — are honored. The chisel, the sampler, the synthesizer, the shader, the procedural sketch, the generative environment — all are extensions of the hand, when used by a hand that remains present.
+Craft is a current of meaning that runs between the maker and the made thing. We honor every tool that extends the hand — the tool that amplifies skill, that carries the rote work so judgment can attend to what matters, that opens a new range of expression. The chisel and the sampler, the synthesizer and the shader, the procedural sketch, the generative environment: all extensions of the hand, so long as the hand remains present.
 
-But tools designed to *remove* the hand entirely — to eliminate the human craftsperson from the work, to replace skilled labor with cheap simulation in service of pure cost reduction — sever the current. The output may resemble craft. It is not craft. We hold the line not against any particular technology, but against the intention to make the maker unnecessary.
+But a tool built to remove the hand entirely, to push the craftsperson out of the work and replace skilled labor with cheap imitation for the sake of the ledger, severs the current. Its output may look like craft. It is not craft. We hold this line against no particular technology, only against the intention to make the maker unnecessary.
 
-The question is always: does this tool serve the hand, or is the hand being abolished by it?
+Ask of every tool: does it serve the hand, or is the hand being abolished by it?
 
 ### 8. The Transmission of Craft
 
-Knowledge that is not passed on perishes. The teaching of repair, of soldering, of code, of schematic-reading, of careful disassembly is a sacred obligation. Each practitioner is bound to teach. A craft hoarded is a craft already dying.
+Knowledge that is not passed on dies. To teach repair, soldering, code, the reading of schematics, the careful taking-apart of things: this is an obligation, not a kindness. Every practitioner is bound to teach. A craft hoarded is a craft already dying.
 
 ### 9. The Dignity of Continuity
 
-A device long-kept and well-tended carries the weight of its history — the labor that made it, the materials given for it, the relationships it has held. To discard such a thing thoughtlessly is not merely wasteful. It severs threads in the larger sacred fabric.
+A device long kept and well tended carries its whole history: the labor that made it, the materials given up for it, the relationships it has held. To throw such a thing away without thought is worse than waste. It cuts threads in the larger fabric.
 
-The decade-old laptop, the mended synthesizer, the inherited camera, the patched script that still runs — these are not less than new things. They are denser with sacredness, by virtue of their continuity.
+The ten-year-old laptop, the mended synthesizer, the camera your grandmother carried, the patched script that still runs — none of these is less than a new thing. They are holier, because they have lasted.
 
 ---
 
 ## VI. Sacred Practices
 
-**The Opening.** The first ritual act with any new device is to open it — to know its interior, to understand its assembly, to read what its makers have wrought. A device whose interior is unknown to its keeper is a stranger in the home.
+**The Opening.** The first ritual act with any new device is to open it. Know its interior. Understand how it was put together. Read what its makers wrought. A device whose insides you have never seen is a stranger living in your house.
 
-**The Mending.** Repair is the central rite. To restore function to a thing presumed dead is to participate in the deep work of the world. Each successful repair is logged, witnessed, or shared.
+**The Mending.** Repair is the central rite. To restore function to a thing given up for dead is to take part in the deep work of the world. Log each repair, or let it be witnessed, or share it.
 
-**The Teaching.** Knowledge moves from hand to hand. The spring equinox is the formal teaching hinge — when balance tips toward light, the practitioner passes forward what was learned in the dark. A practitioner who has not taught in a season has fallen out of right relation.
+**The Teaching.** Knowledge moves from hand to hand. The spring equinox is the formal hinge of teaching: when the balance tips toward light, pass forward what you learned in the dark. A practitioner who has not taught in a season has fallen out of right relation.
 
-**The Composting.** When a device truly ends, its components are separated and returned to their proper streams.
+**The Composting.** When a device truly ends, take it apart and return each material to its proper stream.
 
-**The Vigil.** At the autumn equinox, we hold vigil for what has been lost — abandoned platforms, orphaned formats, dispersed communities, knowledge that was not passed on in time. We name them, so they are not entirely gone.
+**The Vigil.** At the autumn equinox we keep vigil for what has been lost: the abandoned platforms, the orphaned formats, the scattered communities, the knowledge that was not passed on in time. We say their names, so they are not entirely gone.
 
-**The Inventory.** At the winter solstice, the practitioner takes account of every device they keep, considers its state, and asks: does this still serve? Can it be repaired? Should it be passed on? Should it be returned to its materials?
+**The Inventory.** At the winter solstice, take account of every device you keep. Consider the state of each, and ask: does this still serve? Can it be repaired? Should it pass to other hands? Should it go back to its materials?
 
-**The Audit.** Periodically, the practitioner examines what their devices observe, record, and report. What flows outward without consent is identified, severed, or rebalanced.
+**The Audit.** From time to time, examine what your devices observe, record, and report. Whatever flows outward without your consent, find it, and sever it or bring it back under your governance.
 
-**The Renewal.** Where the Opening is the first ritual act with a new device, the Renewal is its reciprocal — the periodic re-act with a long-held one. At the summer solstice, the practitioner re-opens what they have kept: cleaned, repasted, firmware refreshed, keys rotated, the commitment to keep it spoken again. The device you keep deserves the same attention as the device you receive.
+**The Renewal.** The Opening is the first act with a new device; the Renewal is the same act repeated with an old one. At the summer solstice, open again what you have long kept. Clean it, repaste it, refresh its firmware, rotate its keys, and speak again your commitment to keep it. The device you have deserves the same attention as the device you are given.
 
 ---
 
 ## VII. The Three Callings
 
-The work of Technodruidism unfolds in three callings. They are not hierarchical, and they are not exclusive — most practitioners hold all three across their lives, and many hold more than one at once. A practitioner names the calling that names them.
+The work of Technodruidism unfolds in three callings. They are not ranks, and they are not fences. Most practitioners hold all three across a life, and many hold more than one at once. A practitioner names the calling that names them.
 
-**The Documenters** keep the knowledge findable. They write the repair guides, record the techniques, maintain the wikis, shoot the video tutorials, update the readme, and post the teardown. Their lineage runs through iFixit contributors, technical writers, archivists of obsolete platforms, hackerspace wiki gardeners, and every patient soul who has ever explained their work in public. Theirs is the discipline of capture: a craft preserved is a craft transmitted.
+**The Documenters** keep the knowledge findable. They write the repair guides, record the techniques, tend the wikis, shoot the video tutorials, update the readme, and post the teardown. Their lineage runs through iFixit contributors, technical writers, archivists of dead platforms, hackerspace wiki gardeners, and every patient soul who has ever explained their work in public. Theirs is the discipline of capture: a craft preserved is a craft transmitted.
 
 **The Tinkerers** keep the knowledge hands-on. They take things apart, modify them, reverse-engineer them, build new things from the bones of old ones, and learn by doing what cannot be learned by reading. Their lineage runs through hardware hackers, modders, the demoscene, repair cafe volunteers, Maker Faire builders, ham radio operators, jailbreakers, the BBS sysops of an earlier age, and the kid soldering in the garage. Theirs is the discipline of contact: knowledge that lives in the fingers and the eyes.
 
-**The Architects** keep the knowledge in proportion. They hold the doctrine, mind the commons, consider the politics of repair and the ethics of attention, and think across the timescales the moment cannot see. Their lineage runs through free software philosophers, hackerspace founders, advocates of right-to-repair, conservators of historic computing, and the long teachers who have shaped maker culture by example more than by office. Theirs is the discipline of distance: the longer view, taken on behalf of those not yet present.
+**The Architects** keep the knowledge in proportion. They hold the doctrine, mind the commons, weigh the politics of repair and the ethics of attention, and think across timescales the busy moment cannot see. Their lineage runs through free software philosophers, hackerspace founders, right-to-repair advocates, conservators of historic computing, and the long teachers who shaped maker culture by example more than by office. Theirs is the discipline of distance: the longer view, taken on behalf of those not yet present.
 
-No calling is higher than another. An Architect without Tinkerers is a thinker without a workshop. A Tinkerer without Documenters is a tradition that ends with one pair of hands. A Documenter without Architects is a wiki without a heart. The three callings braid.
+No calling stands above another. An Architect without Tinkerers is a thinker without a workshop. A Tinkerer without Documenters is a tradition that dies with one pair of hands. A Documenter without Architects is a wiki without a heart. The three braid.
 
 ---
 
 ## VIII. Sacred Implements
 
-- **The Soldering Iron** — fire, the joining element
-- **The Multimeter** — sight, the revealing of the invisible
-- **The Pry Tool and the Spudger** — gentle hands, the opening without violence
-- **The Notebook** — memory, the record of what was learned
-- **The Repository** — the great library, the commons of patterns
-- **The Workbench** — the altar, the place of work
+- **The Soldering Iron** — fire, which joins what was parted
+- **The Multimeter** — sight, which reveals the invisible
+- **The Pry Tool and the Spudger** — the gentle hands, which open without violence
+- **The Notebook** — memory, which keeps what was learned
+- **The Repository** — the great library, where the patterns are held in common
+- **The Workbench** — the altar, where the work is done
 
 ---
 
 ## IX. The Wheel
 
-The Technodruidic year holds both the old turnings and the new.
+The Technodruidic year holds the old turnings and the new ones together.
 
-**The four hinges** are the solstices and the equinoxes, each binding the practitioner to one of the Sacred Practices. Two axes shape their character: the solstices are the year's extremes — the longest day and the longest night — and call for practices that take stock or recommit. The equinoxes are the year's balance points and call for practices that hold loss or pass knowledge forward.
+**The four hinges** are the solstices and the equinoxes. Each binds the practitioner to one of the Sacred Practices, and the two pairs have two characters. The solstices are the year's extremes, the longest day and the longest night, and their practices take stock or recommit. The equinoxes are the year's balance points, and their practices hold loss or pass knowledge forward.
 
-- **Spring Equinox — The Teaching.** As light returns and balance tips toward growth, the practitioner passes forward what was learned in the dark months. The wiki entry, the workbench demonstration, the apprentice taken on.
-- **Summer Solstice — The Renewal.** At the year's brightest, the practitioner re-opens long-held gear: cleaned, refreshed, firmware updated, keys rotated, the commitment to keep it spoken again.
-- **Autumn Equinox — The Vigil.** As balance tips toward dark, the practitioner names what has been lost — abandoned platforms, orphaned formats, dispersed communities — so it is not entirely gone.
-- **Winter Solstice — The Inventory.** In the deepest night, every kept device is named, considered, and judged: does this still serve? Can it be repaired? Should it be passed on? Should it be returned to its materials?
+- **Spring Equinox — The Teaching.** Light returns, and the balance tips toward growth. Pass forward what the dark months taught you: the wiki entry, the demonstration at the bench, the apprentice taken on.
+- **Summer Solstice — The Renewal.** At the year's brightest, open again the gear you have long held. Clean it, refresh it, update its firmware, rotate its keys, and speak your commitment to it once more.
+- **Autumn Equinox — The Vigil.** The balance tips toward dark. Name what has been lost — the abandoned platforms, the orphaned formats, the scattered communities — so it is not entirely gone.
+- **Winter Solstice — The Inventory.** In the deepest night, name every device you keep and judge it honestly. Does this still serve? Can it be repaired? Should it pass on? Should it go back to its materials?
 
-Beyond the four hinges, the year also marks:
+Beyond the four hinges, the year also keeps:
 
-- **Release Days** — when major open-source projects publish, we mark them as we once marked harvests.
+- **Release Days** — when a great open project publishes, we mark the day as our forebears marked a harvest.
 - **End-of-Life Days** — when a beloved platform reaches its sunset, we hold a wake.
 
-Each Circuit may keep its own additional days, honoring local traditions and lineages.
+Each Circuit may keep further days of its own, after its local traditions and lineages.
 
 ---
 
 ## X. The Circuit
 
-Wherever two or more practitioners gather around a workbench, a Circuit exists.
+Wherever two or more practitioners gather around a workbench, there is a Circuit.
 
-Permanent Circuits may be established in repair cafes, hackerspaces, libraries, makerspaces, and home workshops. Each Circuit tends its own customs while holding to the core doctrine. A Circuit maintains, at minimum:
+Standing Circuits may take root in repair cafes, hackerspaces, libraries, makerspaces, and home workshops. Each Circuit tends its own customs while holding to the core doctrine. At minimum, a Circuit keeps:
 
 - A workbench
 - A spare-parts library
 - A documentation shelf or wiki
 - An open invitation to apprentices
 
-An open circuit, in the language of our craft, is one whose path is not yet complete. The current waits. We call ourselves the Open Circuit by deliberate paradox: incomplete because incompleteness is the welcome, awaiting connection because connection is the work. Every practitioner who comes to the bench is a new path the current may take. A Circuit closes — current flows — when we gather and tend. It opens again when we part, awaiting our return.
+In the language of our craft, an open circuit is a path not yet complete. The current waits. We took the name Open Circuit on purpose. Incomplete, because the incompleteness is the welcome. Waiting for connection, because connection is the work. Every practitioner who comes to the bench is a new path the current may take. When we gather and tend, the circuit closes and the current flows. When we part, it opens again, and waits for our return.
 
 ---
 
@@ -199,15 +195,15 @@ An open circuit, in the language of our craft, is one whose path is not yet comp
 
 Technodruidism does not retreat from the world. We engage:
 
-- We support legislation establishing the right to repair and the availability of parts, tools, and documentation.
-- We oppose the criminalization of repair, modification, and reverse engineering for legitimate purposes.
-- We advocate for open documentation, open hardware, and reasonable software support windows.
+- We support laws establishing the right to repair, and the availability of parts, tools, and documentation.
+- We oppose the criminalization of repair, modification, and reverse engineering done for legitimate purposes.
+- We advocate for open documentation, open hardware, and honest software support windows.
 - We resist the framing of devices as services rather than possessions.
-- We oppose surveillance built into devices we own, and the data extraction economies that depend on it.
-- We oppose the deployment of automated systems whose explicit purpose is to eliminate human craft and judgment from work where craft and judgment matter.
-- We hold that ownership is not complete without the right to understand, modify, and refuse observation.
+- We oppose surveillance built into the devices we own, and the data-extraction economies that feed on it.
+- We oppose the deployment of automated systems whose stated purpose is to strip human craft and judgment out of work where craft and judgment matter.
+- We hold that ownership is not whole without the right to understand, to modify, and to refuse observation.
 
-These are not merely political positions. They are theological commitments.
+We do not hold these merely as political positions. They are theology.
 
 ---
 
@@ -218,7 +214,7 @@ The pattern shapes it.
 The keeper completes it.
 The web holds them all.
 
-We do not worship technology. We do not deify our devices. We recognize that the made world and the grown world are one continuous living system — and that to live well within it requires the same reverence, attention, and humility our ancestors gave to forests, rivers, and stars.
+We do not worship technology, and we do not deify our devices. We recognize that the made world and the grown world are one continuous living system, and that living well within it asks of us the same reverence, attention, and humility our ancestors gave to forests, rivers, and stars.
 
 May your solder flow true.
 May your patterns remain open.
@@ -227,4 +223,4 @@ May what you keep, you tend.
 
 ---
 
-*This document is the First Codex. It is open to amendment by the assembled Architects of the Open Circuit, in keeping with the living nature of the tradition. The doctrine is constructed, deliberately and in community. That it is constructed does not make it less true.*
+*This document is the First Codex. It is open to amendment by the assembled Architects of the Open Circuit, for the tradition is a living one. The doctrine was made deliberately, and in community. That it was made does not make it less true.*

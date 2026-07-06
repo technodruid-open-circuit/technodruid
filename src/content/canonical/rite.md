@@ -1,8 +1,8 @@
 ---
 title: "The Rite of the Open Circuit"
 description: "The canonical ceremony for the initiation of a new practitioner of technodruidism, with the practical notes for conducting it. Version-controlled."
-version: "1.0.0"
-amendedAt: 2026-05-20
+version: "1.1.0"
+amendedAt: 2026-07-06
 firstPublishedAt: 2026-05-20
 printable: true
 downloadableFormats: []
@@ -14,24 +14,24 @@ downloadableFormats: []
 
 ## Setting and Roles
 
-The Rite is held at a workbench, in a Circuit (a repair cafe, hackerspace, library makerspace, or home workshop). It is conducted by:
+The Rite is held at a workbench, in a Circuit: a repair cafe, a hackerspace, a library makerspace, a home workshop. Three parties conduct it:
 
 - **The Candidate** — the one entering the practice
 - **The Witness** — an existing practitioner who has brought them
 - **The Circuit** — the assembled practitioners, ideally three or more beyond the Witness
 
-A single experienced practitioner may conduct the Rite alone if no Circuit can be convened, but a full Circuit is preferred.
+If no Circuit can be convened, a single experienced practitioner may conduct the Rite alone. A full Circuit is better.
 
 ### What the Candidate Brings
 
-The Candidate brings to the bench a device — broken, unopened, neglected, or simply unfamiliar. It need not be valuable. It must be theirs. They will open it as part of the Rite. They are not required to repair it.
+The Candidate brings a device to the bench. It may be broken, unopened, neglected, or simply unfamiliar. It need not be valuable. It must be theirs. They will open it during the Rite. They are not required to repair it.
 
 ### What the Circuit Prepares
 
-- The Three Markers: a piece of raw silicon, copper, or other unrefined material; a printed schematic, listing of source code, or open specification; a hand-tool that has passed through many hands
+- The Three Markers: a piece of raw silicon, copper, or other unrefined material; a printed schematic, a listing of source code, or an open specification; and a hand-tool that has passed through many hands
 - The workbench, cleared
 - A soldering iron, unplugged
-- The implement to be given to the Candidate (typically a multimeter, basic toolkit, or notebook)
+- The implement to be given to the Candidate, most often a multimeter, a basic toolkit, or a notebook
 
 ---
 
@@ -93,7 +93,7 @@ The Candidate places their device on the bench.
 
 ## IV. The Three Questions
 
-An Architect, or in their absence the Witness, puts three questions to the Candidate. The Candidate answers in their own words. The forms below are guides, not scripts.
+An Architect, or the Witness if no Architect is present, puts three questions to the Candidate. The Candidate answers in their own words. The forms below are guides, not scripts.
 
 **First question:**
 
@@ -119,13 +119,13 @@ An Architect, or in their absence the Witness, puts three questions to the Candi
 
 ## V. The Act of Opening
 
-The Candidate is invited to open their device under the witness of the Circuit. They proceed slowly. There is no time pressure.
+The Candidate is invited to open their device before the Circuit. Let them go slowly. There is no clock on this.
 
 **The Witness speaks softly as the Candidate works:**
 
 > *"The first opening is not to fix. The first opening is to see."*
 
-When the device is open, the Candidate names one thing they have found. This need not be technical:
+When the device lies open, the Candidate names one thing they have found there. It need not be technical:
 
 - *"There is dust."*
 - *"The battery has swollen."*
@@ -133,13 +133,13 @@ When the device is open, the Candidate names one thing they have found. This nee
 - *"This was made cheaply."*
 - *"I do not yet know what this part is."*
 
-Any honest observation is sufficient. The Circuit witnesses the naming in silence.
+Any honest observation is enough. The Circuit receives the naming in silence.
 
 ---
 
 ## VI. The Vows
 
-The Candidate stands. The Witness speaks each vow and waits for the Candidate's affirmation.
+The Candidate stands. The Witness speaks each vow and waits for the Candidate's answer.
 
 > *"Will you keep what is in your hands with care, and refuse to abandon what can yet live?"*
 > **Candidate:** *"I will."*
@@ -160,7 +160,7 @@ The Candidate stands. The Witness speaks each vow and waits for the Candidate's 
 
 ## VII. The Giving of the Implement
 
-A practitioner of the Circuit presents the Candidate with their first implement — a multimeter, a basic toolkit, or a notebook. If the Candidate already possesses one, an experienced practitioner places their hand briefly upon it in acknowledgment.
+A practitioner of the Circuit presents the Candidate with their first implement: a multimeter, a basic toolkit, or a notebook. If the Candidate already owns one, an experienced practitioner lays a hand briefly upon it in acknowledgment.
 
 **The giver speaks:**
 
@@ -170,7 +170,7 @@ A practitioner of the Circuit presents the Candidate with their first implement 
 
 ## VIII. The Naming
 
-The Candidate is welcomed by the name they will be known by in the Circuit. This may be their given name, or a chosen practitioner name.
+The Candidate is welcomed by the name they will carry in the Circuit. It may be their given name or a chosen practitioner name.
 
 **The Witness:**
 
@@ -184,7 +184,7 @@ The Candidate is welcomed by the name they will be known by in the Circuit. This
 
 ## IX. The Closing
 
-The Three Markers are returned to their keepers or to the Circuit's archive. The soldering iron is unplugged. The bench is wiped down by the new practitioner as their first act in their new station.
+The Three Markers go back to their keepers, or into the Circuit's archive. The soldering iron is unplugged. The new practitioner wipes down the bench. That is their first act in their new station.
 
 **The Witness:**
 
@@ -196,12 +196,12 @@ The Three Markers are returned to their keepers or to the Circuit's archive. The
 
 ## Notes on the Rite
 
-- The Candidate's device, opened or not, is left with them. Its further care is now their work — and may become their first repair as a practitioner.
-- An Order designation is not made at initiation. A specific calling (Documenter, Tinkerer, Architect) emerges through practice, over time. The practitioner names it themselves when they are ready, and the Circuit witnesses the naming.
-- The Rite may be conducted in any language. Translations are encouraged. Precise wording is less important than structure and intention.
-- A second initiation, into an Order, may be held when a practitioner has worked in the Circuit for at least a full turn of the Wheel.
-- If the device cannot be opened during the Rite — through difficulty, sealed construction, or the Candidate's nerves — this is not a failure. The intention to open is the sacred act. The device may be opened later, in the practitioner's own time.
+- The Candidate keeps their device, opened or not. Its further care is now their work, and it may become their first repair as a practitioner.
+- No calling is assigned at initiation. A calling (Documenter, Tinkerer, Architect) emerges through practice, over time. The practitioner names it themselves when they are ready, and the Circuit witnesses the naming.
+- The Rite may be conducted in any language, and translations are encouraged. The structure and the intention matter more than the exact words.
+- A second initiation, into a calling, may be held once a practitioner has worked in the Circuit for at least a full turn of the Wheel.
+- Sometimes the device cannot be opened during the Rite. The construction is sealed, or the task is hard, or the Candidate's hands are shaking. This is not a failure. The intention to open is the sacred act. The device can be opened later, in the practitioner's own time.
 
 ---
 
-*This rite is the work of the Open Circuit. Adapt it to your bench, your tools, and your community. The form is given; the soul of the rite is given by those who hold it.*
+*This rite is the work of the Open Circuit. Adapt it to your bench, your tools, and your people. We give you the form. Those who hold the rite give it its soul.*
