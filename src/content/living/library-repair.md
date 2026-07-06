@@ -1,38 +1,40 @@
 ---
 title: "Repair"
 description: "A curated index of external repair resources — manuals, schematics, community repair spaces, channels, and the engineering record. Repair is doctrine in practice."
-lastEditedAt: 2026-05-25
+lastEditedAt: 2026-07-06
 contributors: []
 sourcePath: "src/content/living/library-repair.md"
 ---
 
-The repair library is a list of external resources the practice draws on. It is
-**curated**, not exhaustive — entries earn their place by being useful to someone
-who is fixing something. Adding here means we vouch that the resource still
-works as of the last edit above. Broken links are annotated, not deleted.
+The repair library lists the outside resources the practice leans on. It is
+**curated**, not exhaustive. An entry earns its place by being useful to
+someone who is fixing something. Listing a resource here means we vouch that
+it still worked as of the last-edited date above. When a link breaks, we
+annotate it. We do not delete it.
 
-This is a [living](/codex) document. Section headings below mirror the
+This is a [living](/codex) document. The section headings below follow the
 [information architecture](https://github.com/technodruid-open-circuit/technodruid/blob/main/docs/information-architecture.md)
-§5 list for `/library/repair`. The "Practitioner walkthroughs" section is empty
-by design — nothing yet earns the attribution.
+§5 list for `/library/repair`. The "Practitioner walkthroughs" section is
+empty on purpose. Nothing has yet earned the attribution.
 
 ## Manuals and schematics
 
-- [iFixit](https://www.ifixit.com/) — the largest open repair-manual host;
-  step-by-step teardowns for phones, laptops, appliances, vehicles. Search by
-  device.
-- **Manufacturer schematics** — service documentation varies by vendor. Where
-  openly published, link from the device's iFixit entry or the manufacturer's
-  own support site. Closed schematics, and the campaigns to open them, are
-  tracked on right-to-repair coalition pages (see
-  [/library/links](/library/links)).
+- [iFixit](https://www.ifixit.com/) — the largest open host of repair
+  manuals; step-by-step teardowns for phones, laptops, appliances, and
+  vehicles. Search by device.
+- **Manufacturer schematics** — service documentation varies widely by
+  vendor. Where it is openly published, you will usually find it linked from
+  the device's iFixit entry or the manufacturer's own support site. The
+  closed schematics, and the campaigns to pry them open, are tracked on the
+  right-to-repair coalition pages (see [/library/links](/library/links)).
 
 ## Community repair spaces
 
-- [Repair Café International](https://www.repaircafe.org/) — directory of
+- [Repair Café International](https://www.repaircafe.org/) — a directory of
   community repair events across roughly forty countries. Search by city.
-- [The Restart Project](https://therestartproject.org/) — UK-based
-  community-repair network with event calendars, fixer training, and a podcast.
+- [The Restart Project](https://therestartproject.org/) — a UK-based
+  community-repair network with event calendars, fixer training, and a
+  podcast.
 
 ## Channels
 
@@ -43,21 +45,22 @@ by design — nothing yet earns the attribution.
 ## The engineering record (RFCs that matter)
 
 - [RFC 1925 — The Twelve Networking Truths](https://datatracker.ietf.org/doc/html/rfc1925)
-  — read before debugging anything that crosses a network boundary.
+  — read it before debugging anything that crosses a network boundary.
 
 ## Practitioner walkthroughs
 
-`[EMPTY]` — reserved for original repair write-ups by the keeper community. An
-entry here must name the practitioner, the device, the date, and the outcome.
+`[EMPTY]` — reserved for original repair write-ups from the keeper
+community. An entry here must name the practitioner, the device, the date,
+and the outcome.
 
 ## How the list grows
 
-Additions are proposed by amendment, the same way other doctrine is amended. A
-new entry should explain what it contributes that the existing list does not —
-duplicate links to the same resource under different names are not additions.
-Entries are not removed when they break; they are annotated as broken with the
-date the link was last checked.
+Additions come by amendment, the same way the rest of the doctrine is
+amended. A new entry should say what it adds that the existing list lacks;
+the same resource under a different name is not an addition. Entries are not
+removed when they break. They are annotated as broken, with the date the
+link was last checked.
 
-Companion lists — [/library/reading](/library/reading) (books, essays, films)
-and [/library/links](/library/links) (the broader commons we depend on) — sit
-alongside this one.
+Two companion lists sit alongside this one:
+[/library/reading](/library/reading) for books, essays, and films, and
+[/library/links](/library/links) for the broader commons we depend on.
