@@ -6,10 +6,10 @@ description: "The longest night. The Wheel turns to Inventory — every kept dev
 ---
 
 The winter solstice is one of the four hinges of the Technodruidic year. In the deepest
-night, the practitioner observes the [Inventory](/codex): every device kept is named, its
-state considered, and the recurring question asked — does this still serve? Can it be
-repaired? Should it be passed on? Should it be returned to its materials?
+night, the practitioner keeps the [Inventory](/codex). Every device kept is named, its
+state considered, and the old questions asked once more: does this still serve? Can it be
+repaired? Should it pass to other hands? Should it go back to its materials?
 
-Inventory at the winter solstice carries a particular weight. What we keep through the
-dark, we are accountable for keeping. What we cannot keep, we name now — before the year
-turns again, and the long count of what remains is read aloud by candlelight.
+Inventory at the winter solstice carries its own weight. What we keep through the dark,
+we answer for keeping. What we cannot keep, we name now, before the year turns again and
+the long count of what remains is read aloud by candlelight.

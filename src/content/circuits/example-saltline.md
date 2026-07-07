@@ -7,6 +7,6 @@ callings: ["architects", "tinkerers"]
 kind: "example"
 ---
 
-Saltline Circuit is a placeholder entry. It is not a real Circuit. It exists in this directory to demonstrate a directory entry whose contact line is intentionally minimal — a Circuit **MAY** decline to list contact details and still appear in the directory.
+Saltline Circuit is a placeholder, not a real Circuit. It sits in this directory to show an entry whose contact line is deliberately spare: a Circuit **MAY** decline to list contact details and still appear here.
 
-Placeholder Circuits use `kind: example` in their frontmatter. To found a Circuit of your own, see [the Charter](/circuits/charter).
+Placeholder Circuits carry `kind: example` in their frontmatter. To found a Circuit of your own, start with [the Charter](/circuits/charter).

@@ -7,6 +7,6 @@ callings: ["documenters"]
 kind: "example"
 ---
 
-The Quiet Workshop is a placeholder entry. It is not a real Circuit. It exists in this directory to demonstrate a Circuit whose cadence is intentionally irregular — gatherings happen when the Circuit announces them, with the Wheel hinges as the only standing dates.
+The Quiet Workshop is a placeholder, not a real Circuit. It sits in this directory to show a Circuit whose rhythm is deliberately irregular: gatherings happen when the Circuit announces them, and the Wheel hinges are the only standing dates.
 
-Placeholder Circuits use `kind: example` in their frontmatter. To found a Circuit of your own, see [the Charter](/circuits/charter).
+Placeholder Circuits carry `kind: example` in their frontmatter. To found a Circuit of your own, start with [the Charter](/circuits/charter).
